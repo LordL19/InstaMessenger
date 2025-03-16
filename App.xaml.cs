@@ -1,4 +1,4 @@
-﻿using System;
+﻿using InstantMessenger.Views;
 using System.Windows;
 
 namespace InstantMessenger
@@ -23,7 +23,6 @@ namespace InstantMessenger
                 MainWindow mainWindow = new MainWindow(customUsername);
                 this.MainWindow = mainWindow; // Establece MainWindow en la aplicación
                 mainWindow.Show();
-                
             }
             else
             {

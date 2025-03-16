@@ -1,6 +1,7 @@
-﻿<Window x:Class="InstantMessenger.LoginWindow"
+﻿<Window x:Class="InstantMessenger.Views.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewmodels="clr-namespace:InstantMessenger.ViewModels"
         Title="Bienvenido a Insta Messenger" Height="350" Width="450"
         WindowStartupLocation="CenterScreen"
         Background="#F5F5F5">
@@ -103,17 +104,19 @@
                        Foreground="{StaticResource TelegramDarkText}"/>
 
             <TextBox Grid.Row="3" 
-                     x:Name="UsernameTextBox" 
+                     Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
                      Height="40" 
                      Margin="0,0,0,15"
                      FontSize="14"/>
 
             <Button Grid.Row="3" 
                     Content="Entrar al Chat" 
+                    Command="{Binding LoginCommand}"
                     Height="40" 
-                    Click="LoginButton_Click"
                     FontSize="16"
-                    VerticalAlignment="Top" Margin="0,50,0,0" Grid.RowSpan="2"/>
+                    VerticalAlignment="Top" 
+                    Margin="0,50,0,0" 
+                    Grid.RowSpan="2"/>
         </Grid>
     </Border>
 </Window>
